@@ -1,5 +1,5 @@
 <!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
+<!--<div style="text-align:center">
   <h1>
     Welcome to {{title}}!!
   </h1>
@@ -17,4 +17,32 @@
     <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
   </li>
 </ul>
+-->
 
+<div class="demo-container" mdl-shadow="2">
+   <mdl-layout mdl-layout-fixed-header mdl-layout-header-seamed>
+      <mdl-layout-header>
+         <mdl-layout-header-row>
+            <mdl-layout-title>Title</mdl-layout-title>
+            <mdl-layout-spacer></mdl-layout-spacer>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+               <a class="mdl-navigation__link" >Link</a>
+               <a class="mdl-navigation__link" >Link</a>
+               <a class="mdl-navigation__link" >Link</a>
+            </nav>
+         </mdl-layout-header-row>
+      </mdl-layout-header>
+      <mdl-layout-drawer>
+         <mdl-layout-title>Title</mdl-layout-title>
+         <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" >Link</a>
+            <a class="mdl-navigation__link" >Link</a>
+            <a class="mdl-navigation__link" >Link</a>
+         </nav>
+      </mdl-layout-drawer>
+      <mdl-layout-content>
+         <!-- Your content goes here -->
+      </mdl-layout-content>
+   </mdl-layout>
+</div>
