@@ -6,5 +6,10 @@ import { Component } from '@angular/core'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app'
+  title = 'Shoutbox Services Suite'
+
+  links = [
+    { name: 'Find', url: '/shouts/find' },
+    { name: 'Feed', url: '/shouts/feed' }
+  ]
 }

@@ -1,0 +1,22 @@
+form {
+  display: flex;
+  mdl-textfield {
+    margin: 0 5px;
+  }
+  .date {
+    width: 240px;
+  }
+  .limit {
+    width: 80px;
+    margin-top: 5.5px;
+  }
+  .author {
+    width: 120px;
+    margin-top: 5.5px;
+  }
+  .content {
+    flex-grow: 1;
+    margin-top: 5.5px;
+  }
+}
+

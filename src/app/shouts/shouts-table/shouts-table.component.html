@@ -1,0 +1,29 @@
+<ngx-datatable
+  class="material expandable striped"
+  [columnMode]="'force'"
+  [headerHeight]="37"
+  [footerHeight]="37"
+  [loadingIndicator]="loading"
+  [scrollbarV]="true"
+  [rows]="rows">
+  <!-- <ngx-datatable-column class="shout" prop="_id" name="Id" maxWidth="80">
+    <ng-template let-value="value" ngx-datatable-cell-template>
+      {{value}}
+    </ng-template>
+  </ngx-datatable-column> -->
+  <ngx-datatable-column class="shout" prop="timestamp" name="Timestamp" [maxWidth]="200">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <span [title]="row.timestamp">{{row.localeTimestamp}}</span>
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column class="shout" prop="author_name" name="Author" [maxWidth]="150">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <span [style.font-weight]="row['author_color'] ? 'bold' : 'normal'" [style.color]="row['author_color']">{{row['author_name']}}</span>
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column class="shout" prop="content" name="Content">
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+      {{value}}
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>

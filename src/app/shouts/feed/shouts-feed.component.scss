@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+app-shouts-table /deep/ {
+  .ngx-datatable {
+    height: 85vh;
+  }
+}

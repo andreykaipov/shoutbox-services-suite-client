@@ -1,0 +1,8 @@
+<form [formGroup]="form">
+  <mdl-textfield class="date" label="" type="datetime-local" step="1" formControlName="since" floating-label></mdl-textfield>
+  <mdl-textfield class="date" label="" type="datetime-local" step="1" formControlName="until" floating-label></mdl-textfield>
+  <mdl-textfield class="limit" label="Limit" type="number" formControlName="limit" floating-label></mdl-textfield>
+
+  <mdl-textfield class="author" label="Author" type="text" formControlName="author_name" floating-label></mdl-textfield>
+  <mdl-textfield class="content" label="Content" type="text" formControlName="content" floating-label></mdl-textfield>
+</form>
