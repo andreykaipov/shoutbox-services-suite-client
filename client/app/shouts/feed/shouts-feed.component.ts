@@ -12,10 +12,10 @@ import { Shout, ShoutsService } from '../shouts.service'
 export class ShoutsFeedComponent implements OnInit, OnDestroy {
 
   private alive = true
-  private loading = true
   private zone = new NgZone({ enableLongStackTrace: false })
 
   shouts: Shout[]
+  loading = true
 
   constructor(
     private shoutsService: ShoutsService,

@@ -12,7 +12,7 @@ export class ShoutsFindComponent implements OnInit {
   @Input() apiVersion: string
 
   shouts: Shout[]
-  private loading = true
+  loading = true
 
   constructor(
     private shoutsService: ShoutsService

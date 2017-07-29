@@ -1,8 +1,7 @@
 import { Injectable, NgZone } from '@angular/core'
 import { Http } from '@angular/http'
 import { Observable } from 'rxjs/Rx'
-
-declare const EventSource: any
+import { ApiService } from '../helpers/common/api.service'
 
 export interface Shout {
   _id: number
@@ -18,19 +17,19 @@ export interface Shout {
 export class ShoutsService {
 
   constructor(
-    private http: Http
+    private api: ApiService
   ) {}
 
   // gets the shouts, latest by default
   getAll(params = { sort: '_id:-1' }, vn = 'v2'): Observable<Shout[]> {
-    return this.http.get(`/api/${vn}/shouts`, { params: params })
+    return this.api.get(`/${vn}/shouts`, { params: params })
       .map(res => res.json().items)
       .do(shouts => shouts.forEach(this.addLocaleTimestamp))
   }
 
   // gets one shout by id
   get(id: number, vn = 'v2'): Observable<Shout> {
-    return this.http.get(`/api/${vn}/shouts/${id}`)
+    return this.api.get(`/${vn}/shouts/${id}`)
       .map(res => res.json())
       .do(shout => this.addLocaleTimestamp(shout))
   }
@@ -38,7 +37,7 @@ export class ShoutsService {
   // https://github.com/angular/zone.js/issues/356
   getStream(): Observable<Shout> {
     return Observable.create(observer => {
-      const eventSource = new EventSource(`/api/shouts/stream`)
+      const eventSource = this.api.getEventSource(`/shouts/stream`)
       eventSource.onmessage = msgEvent => {
         const shout = JSON.parse(msgEvent.data)
         this.addLocaleTimestamp(shout)
