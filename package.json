@@ -4,12 +4,11 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "dev": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start:dev": "ts-node ./server/app.ts",
+    "build:prod": "rm -rf ./dist && ng build --env=prod --no-aot && tsc -p ./server",
+    "start:prod": "forever start -m 5 --uid \"sss-client\" ./dist/server/app.js",
+    "expose": "lt --port 8080"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +24,7 @@
     "@angular/router": "^4.0.0",
     "@swimlane/ngx-datatable": "^9.3.1",
     "core-js": "^2.4.1",
+    "express": "^4.15.3",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
@@ -35,6 +35,8 @@
     "@types/jasmine": "2.5.45",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.0.1",
+    "forever": "^0.15.3",
+    "localtunnel": "^1.8.3",
     "node-sass": "^4.5.3",
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
