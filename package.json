@@ -6,9 +6,8 @@
     "ng": "ng",
     "dev": "ng serve --proxy-config proxy.conf.json",
     "start:dev": "ts-node ./server/app.ts",
-    "build:prod": "rm -rf ./dist && ng build --env=prod --no-aot && tsc -p ./server",
-    "start:prod": "forever start -m 5 --uid \"sss-client\" ./dist/server/app.js",
-    "expose": "lt --port 8080"
+    "build:prod": "rm -rf ./dist && ng build --prod && tsc -p ./server",
+    "start:prod": "forever start -m 5 --uid \"sss-client\" ./dist/server/app.js"
   },
   "private": true,
   "dependencies": {
@@ -29,7 +28,7 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.1.0",
+    "@angular/cli": "^1.2.6",
     "@angular/compiler-cli": "^4.0.0",
     "@angular/language-service": "^4.0.0",
     "@types/jasmine": "2.5.45",
