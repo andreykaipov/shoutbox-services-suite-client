@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'http://localhost:9000/api'
+  api: 'http://shoutbox.site:9000/api'
 }
