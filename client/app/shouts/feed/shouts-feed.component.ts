@@ -52,7 +52,9 @@ export class ShoutsFeedComponent implements OnInit, OnDestroy {
         this.zone.run(() => {
           this.shouts.unshift(shout)
           this.loading = false
-          this.synthesisService.speak(shout.content)
+          this.synthesisService.speak(
+            `${shout.author_name} says... ${shout.content}`
+          )
         })
       })
   }
